@@ -10,6 +10,25 @@ Federated learning (FL) enables multiple clients to collaboratively train machin
 
 ## Usage
 
+# Reproduction
+To reproduce the results in the paper, do the following steps
+
+1. Add src/ to environment variable PYTHONPATH
+2. Install the dependencies: pip install -r requirements.txt
+3. Run bash `run.sh` and select option 2 to 9 to generate the code.
+**output**
+```
+1) debug		        7) dumbbell_plot
+2) optimization_delta	        8) dumbbell_improvement
+3) optimization_delta_plot      9) dumbbell_improvement_plot
+4) honest_majority	       10) dumbbell_CIFAR
+5) honest_majority_plot	       11) dumbbell_CIFAR_plot
+6) dumbbell		       12) Quit
+Please enter your choice: 
+```
+4. The output will be saved to the corresponding folders under outputs
+
+Note that if the GPU memory is small (e.g. less than 16 GB), then running the previous commands may raise insufficient exception. In this case, one can decrease the level parallelism in the script by changing the order of loops and reduce the number of parallel processes.
 
 
 ## Problems Addressed and Their Solutions
