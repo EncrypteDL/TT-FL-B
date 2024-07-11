@@ -14,8 +14,14 @@ Run the following command to install the required packages:
 
 ``pip install -r requirements.txt``
 
-## Usage
+## Installation
+```
+# Clone the repository
+git clone https://github.com/EncrypteDL/TT-FL-B.git
 
+# Change to the project directory
+cd TT-FL-B
+```
 # Reproduction
 To reproduce the results in the paper, do the following steps
 
