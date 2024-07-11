@@ -9,6 +9,10 @@ Typically, in federated learning (FL), the training procedure can be formulated 
 ![alt text](assets/image.png)
 
 ## Dependency
+Install requirements
+Run the following command to install the required packages:
+
+``pip install -r requirements.txt``
 
 ## Usage
 
@@ -33,8 +37,55 @@ Please enter your choice:
 Note that if the GPU memory is small (e.g. less than 16 GB), then running the previous commands may raise insufficient exception. In this case, one can decrease the level parallelism in the script by changing the order of loops and reduce the number of parallel processes.
 
 
-## Problems Addressed and Their Solutions
+# Problems Addressed and Their Solutions
 
+### Problem 1: Data Poisoning Attacks in Federated Learning
+
+**Description:**
+In a federated learning setup, multiple participants (clients) collaboratively train a global model by sharing their local model updates with a central server. Malicious participants can launch data poisoning attacks by injecting false or misleading data during the training process, which can degrade the performance of the global model.
+
+**Solution:**
+The project integrates Byzantine Fault Tolerance (BFT) mechanisms to detect and mitigate data poisoning attacks. BFT algorithms ensure that the system can reach a consensus even in the presence of malicious actors. By implementing BFT, the project can identify and disregard malicious updates, maintaining the integrity of the global model.
+
+### Problem 2: Lack of Data Privacy in Centralized Learning
+
+**Description:**
+Traditional centralized machine learning requires aggregating data from multiple sources into a central location for training. This approach poses significant privacy risks, as sensitive data from participants can be exposed to unauthorized access or breaches.
+
+**Solution:**
+Federated learning addresses this issue by allowing participants to train models locally on their devices and only share model updates (gradients) with the central server. This approach preserves data privacy as raw data never leaves the local device. Additionally, the project can implement privacy-preserving techniques such as differential privacy and secure multiparty computation to further enhance data privacy.
+
+### Problem 3: Vulnerability to Single Point of Failure
+
+**Description:**
+Centralized machine learning systems are vulnerable to single points of failure. If the central server fails or is compromised, the entire training process is disrupted, and the system’s security is compromised.
+
+**Solution:**
+By integrating blockchain technology, the project creates a decentralized and distributed ledger that records and manages federated learning updates. Blockchain’s inherent properties of decentralization, immutability, and fault tolerance eliminate single points of failure, ensuring continuous and secure operation of the federated learning system.
+
+### Problem 4: Trust Issues Among Participants
+
+**Description:**
+In a federated learning setup involving multiple participants, trust issues may arise. Participants may be reluctant to share their model updates due to concerns about the honesty and integrity of other participants.
+
+**Solution:**
+Blockchain technology enhances trust among participants by providing a transparent and immutable record of all transactions (model updates). Smart contracts can be used to enforce rules and agreements, ensuring that all participants adhere to the protocol. This transparency and accountability foster trust and encourage collaboration.
+
+### Problem 5: Model Robustness Against Malicious Actors
+
+**Description:**
+Federated learning systems are susceptible to attacks by malicious actors who may attempt to corrupt the model by injecting false updates or by colluding with other malicious participants.
+
+**Solution:**
+The integration of BFT mechanisms ensures that the federated learning system can tolerate a certain number of malicious participants without compromising the overall model integrity. BFT algorithms enable the system to reach a consensus on the correct model updates, even in the presence of malicious actors. This ensures that the global model remains robust and reliable.
+
+### Problem 6: Scalability of Federated Learning
+
+**Description:**
+Scaling federated learning to a large number of participants can be challenging due to communication overhead and the complexity of aggregating updates from numerous devices.
+
+**Solution:**
+The project leverages blockchain’s decentralized architecture to facilitate scalable federated learning. By distributing the task of aggregating updates across multiple nodes in the blockchain network, the system can handle a larger number of participants efficiently. Additionally, techniques such as model compression and efficient communication protocols can be employed to reduce communication overhead.
 
 
 ## REFERENCES
